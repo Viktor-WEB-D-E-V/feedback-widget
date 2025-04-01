@@ -1,0 +1,23 @@
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 25px;
+}
+.btn {
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 10px 20px;
+  background-color: rgb(238, 243, 243);
+}
+
+.btn:hover {
+  background-color: black;
+  color: rgb(238, 243, 243);
+}
+
+.btn:focus {
+  background-color: black;
+  color: rgb(238, 243, 243);
+}
