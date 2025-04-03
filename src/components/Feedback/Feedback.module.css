@@ -1,8 +1,9 @@
 .feedback {
-  margin-top: 10px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
 }
 .item {
   font-size: large;
