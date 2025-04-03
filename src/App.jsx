@@ -10,8 +10,14 @@ function App() {
     good: 0,
     neutral: 0,
     bad: 0,
-    totalFeedback: 0,
   });
+
+  const totalFeedback = reviews.bad + reviews.good + reviews.neutral;
+
+  const countPositiveFeedback =
+    reviews.totalFeedback > 0
+      ? Math.round((reviews.good / totalFeedback) * 100)
+      : 0;
 
   const updateFeedback = (type) => {
     setReviews((prevReviews) => ({
@@ -27,7 +33,11 @@ function App() {
   return (
     <>
       <Description />
-      <Options total={reviews.totalFeedback} setFeedback={updateFeedback} resetFeedback={resetFeedback} />
+      <Options
+        total={reviews.totalFeedback}
+        setFeedback={updateFeedback}
+        resetFeedback={resetFeedback}
+      />
 
       {reviews.totalFeedback <= 0 ? (
         <Notification />
@@ -36,6 +46,7 @@ function App() {
           good={reviews.good}
           neutral={reviews.neutral}
           bad={reviews.bad}
+          positive={countPositiveFeedback}
           total={reviews.totalFeedback}
         />
       )}
