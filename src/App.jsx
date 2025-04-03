@@ -51,7 +51,7 @@ function App() {
         resetFeedback={resetFeedback}
       />
 
-      {reviews.totalFeedback <= 0 ? (
+      {totalFeedback <= 0 ? (
         <Notification />
       ) : (
         <Feedback
