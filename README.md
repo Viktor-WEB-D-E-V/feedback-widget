@@ -1,12 +1,52 @@
-# React + Vite
+# Feedback App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is a simple React-based feedback collection application that allows users to rate a service as **Good, Neutral, or Bad**. The app dynamically updates and stores user feedback in local storage for persistence.
 
-Currently, two official plugins are available:
+## Features
+- Allows users to provide feedback by selecting **Good, Neutral, or Bad**.
+- Displays the total feedback count and percentage of positive feedback.
+- Automatically saves feedback data in **local storage**.
+- Provides a **reset button** to clear all feedback.
+- Displays a message when no feedback has been given yet.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React.js (with Hooks: `useState`, `useEffect`)
+- LocalStorage for data persistence
 
-## Expanding the ESLint configuration
+## Installation & Setup
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/Viktor-WEB-D-E-V/feedback-widget.git
+   cd feedback-widget
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Run the application:
+   ```sh
+   npm run dev
+   ```
+4. Open `http://localhost:5173/` (or the specified port) in your browser.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+```
+src/
+ ├── components/
+ │   ├── Description/      # App introduction component
+ │   ├── Feedback/         # Displays feedback statistics
+ │   ├── Notification/     # Message when no feedback is given
+ │   ├── Options/          # Buttons for feedback input
+ ├── App.jsx               # Main application logic
+ ├── main.jsx              # App entry point
+ ├── index.css             # Global styles
+```
+
+## How It Works
+1. The user clicks a feedback button (**Good, Neutral, Bad**).
+2. The state updates, and the total feedback count increases.
+3. The updated feedback is stored in **local storage**.
+4. Feedback statistics (total count, percentage) are displayed dynamically.
+5. The user can reset all feedback data by clicking the **Reset** button.
+
